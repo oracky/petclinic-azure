@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: orackypetclinicazure 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: orackypetclinicazure
+  template:
+    metadata:
+      labels:
+        app: orackypetclinicazure 
+    spec:
+      containers:
+        - name: orackypetclinicazure 
+          image: wusregistry.azurecr.io/orackypetclinicazure
+          ports:
+          - containerPort: 80
